@@ -1,14 +1,12 @@
 #!/bin/bash
 
-password=$(cat ./password.txt)
-
 send_notification(){
     notify-send $1
 }
 
 reload_touchpad(){
-    libinput-gestures-setup stop
-    echo $password | sudo --stdin modprobe -r psmouse; sudo --stdin modprobe psmouse
+    libinput-gestures-setup stop    
+    pkexec sh -c "sudo modprobe -r psmouse; sudo modprobe psmouse"    
     libinput-gestures-setup restart
     libinput-gestures-setup start
 }
