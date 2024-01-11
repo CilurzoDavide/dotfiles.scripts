@@ -12,7 +12,7 @@ reload_touchpad(){
 }
 
 send_notification "reloading...."
-# espeak-ng "Started"
+espeak-ng "Started"
 reload_touchpad
-# espeak-ng "Done"
+espeak-ng "Finished"
 send_notification "TOUCHPAD RELOADED"
