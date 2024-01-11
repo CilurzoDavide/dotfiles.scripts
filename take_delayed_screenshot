@@ -1,0 +1,4 @@
+#!/bin/bash
+notify-send 'screenshotting in 5 seconds'
+sleep 5
+xfce4-screenshooter --clipboard --region

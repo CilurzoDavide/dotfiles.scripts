@@ -1,0 +1,5 @@
+#!/bin/bash
+notify-send 'Turning off screen'
+sleep 1 && xset -display :0.0 dpms force off
+sleep 1 && xset -display :0.0 dpms force off
+sleep 1 && xset -display :0.0 dpms force off
