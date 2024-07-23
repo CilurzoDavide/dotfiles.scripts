@@ -1,0 +1,20 @@
+#!/bin/bash
+password=$(cat /home/tobecci/.scripts/password.txt)
+conf_path=/home/tobecci/dev/configs/tlp/performance.conf
+
+echo "NO NEED TO INPUT PASSWORD"
+
+echo $password | sudo --stdin  sleep 5
+
+# link file
+echo $password | sudo --stdin ln -s $conf_path /etc/tlp.conf -f
+
+#  restart tlp service twice for good measure
+echo $password | sudo --stdin systemctl restart tlp
+echo $password | sudo --stdin systemctl restart tlp
+
+
+#display tlp processor stat
+echo $password | sudo --stdin tlp-stat -p
+
+/home/tobecci/dev/personalProjects/productivity/linuxUtils/src/screen/brightness/highest.brightness.mjs

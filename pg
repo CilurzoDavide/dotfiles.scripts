@@ -1,0 +1,39 @@
+#!/bin/sh
+
+killall ping
+
+(
+	ping google.com
+) &
+
+(
+	ping facebook.com
+) &
+
+(
+	ping cloudfare.com
+) &
+
+(
+	ping amazon.com
+) &
+
+(
+	ping apple.com
+) &
+
+(
+	ping google.com
+) &
+
+
+(
+	ping fast.com
+) &
+
+(
+	ping facebook.com
+) &
+
+
+
