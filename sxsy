@@ -1,0 +1,3 @@
+#!/bin/bash
+password=$(cat /home/tobecci/.scripts/password.txt)
+echo $password | /usr/bin/sudo --stdin /usr/bin/sudo pacman -S --noconfirm $@

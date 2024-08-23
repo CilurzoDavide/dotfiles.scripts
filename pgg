@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo $(ps auxf | grep -i pgg)
+killall ping
+
+( ping google.com ) &
+( ping google.com ) &
+
