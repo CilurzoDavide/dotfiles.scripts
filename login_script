@@ -1,0 +1,31 @@
+#!/bin/bash
+notif_id=6969
+
+/usr/bin/notify-send "LOGIN SCRIPT STATUS" "loading.........." -t 300000  --replace-id $notif_id
+
+echo 'performing login actions'
+
+# switch to last desktop
+switch_to_last_desktop(){
+	/usr/bin/wmctrl -s 4
+}
+
+send_notification(){
+	/usr/bin/notify-send 'login_script' "$1"
+}
+
+sleep 3
+
+# reload touchpad in background
+send_notification "reloading touchpad" && /home/tobecci/.scripts/reload_touchpad.sh &
+
+# # pwm workers
+send_notification "starting pwm loop" && /home/tobecci/dev/scripts/xfceWindowHide/workers/startOperationalLoop.js > /dev/null 2>&1 &
+
+# # bitwarden
+send_notification "starting bitwarden" && switch_to_last_desktop && /usr/bin/bitwarden-desktop
+
+# # todolist
+send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/personalProjects/productivity/tobecci.todo
+
+/usr/bin/notify-send "LOGIN SCRIPT STATUS" "done" -t 1000  --replace-id $notif_id

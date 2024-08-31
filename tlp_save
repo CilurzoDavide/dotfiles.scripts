@@ -14,5 +14,6 @@ echo $password | sudo --stdin systemctl restart tlp
 echo $password | sudo --stdin systemctl restart tlp
 
 echo $password | sudo --stdin tlp-stat -p
+echo $password | sudo --stdin tlp-stat -s
 
 # /home/tobecci/dev/personalProjects/productivity/linuxUtils/src/screen/brightness/lowest.brightness.mjs
