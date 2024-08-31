@@ -1,4 +1,5 @@
 #!/bin/bash
+
 notif_id=6969
 
 /usr/bin/notify-send "LOGIN SCRIPT STATUS" "loading.........." -t 300000  --replace-id $notif_id
@@ -15,6 +16,9 @@ send_notification(){
 }
 
 sleep 3
+
+# set brightness to default
+send_notification "setting brightness" &&  /home/tobecci/dev/personalProjects/productivity/linuxUtils/src/screen/brightness/lowest.brightness.mjs &
 
 # reload touchpad in background
 send_notification "reloading touchpad" && /home/tobecci/.scripts/reload_touchpad.sh &
