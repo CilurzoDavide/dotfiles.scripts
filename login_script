@@ -16,7 +16,7 @@ send_notification(){
 }
 
 breathe_a_bit(){
-	sleep 3
+	sleep 1
 }
 
 
@@ -26,12 +26,12 @@ breathe_a_bit(){
 # Main actions
 ###############################
 # reload touchpad in background
-send_notification "reloading touchpad" && /home/tobecci/.scripts/reload_touchpad.sh &
+send_notification "reloading touchpad" && /home/tobecci/.scripts/reloadTouchpad &
 
 breathe_a_bit
 
 # set brightness to default
-send_notification "setting brightness" &&  /home/tobecci/dev/personalProjects/productivity/linuxUtils/src/screen/brightness/lowest.brightness.mjs &
+send_notification "setting brightness" &&  /home/tobecci/dev/scripts/linuxUtils/src/screen/brightness/lowest.brightness.mjs &
 
 breathe_a_bit
 
@@ -41,12 +41,12 @@ send_notification "starting pwm loop" && /home/tobecci/dev/scripts/xfceWindowHid
 breathe_a_bit
 
 # # bitwarden
-send_notification "starting bitwarden" && switch_to_last_desktop && /usr/bin/bitwarden-desktop > /dev/null 2>&1 &
+# send_notification "starting bitwarden" && switch_to_last_desktop && /usr/bin/bitwarden-desktop > /dev/null 2>&1 &
 
 breathe_a_bit
 
 # # todolist
-send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/personalProjects/productivity/tobecci.todo > /dev/null 2>&1 &
+# send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/personalProjects/productivity/tobecci.todo > /dev/null 2>&1 &
 
 breathe_a_bit
 
