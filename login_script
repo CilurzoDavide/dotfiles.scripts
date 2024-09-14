@@ -8,7 +8,7 @@ echo 'performing login actions'
 
 # switch to last desktop
 switch_to_last_desktop(){
-	/usr/bin/wmctrl -s 4
+	/usr/bin/wmctrl -s 1
 }
 
 send_notification(){
@@ -46,7 +46,7 @@ breathe_a_bit
 breathe_a_bit
 
 # # todolist
-# send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/personalProjects/productivity/tobecci.todo > /dev/null 2>&1 &
+send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/tobecci.todo > /dev/null 2>&1 &
 
 breathe_a_bit
 
