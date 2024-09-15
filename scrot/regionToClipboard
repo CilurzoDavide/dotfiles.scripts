@@ -1,0 +1,10 @@
+#!/bin/sh
+file_path=/home/tobecci/Pictures/Screenshots/scrot-$(date +%c).jpeg
+
+
+/usr/bin/scrot --file "$file_path" --format jpeg --quality 10 --silent --freeze --select --line color="red",style=dash,width=5,opacity=100
+
+/usr/bin/xclip -selection clipboard -t image/jpeg -i "$file_path"
+
+
+rm "$file_path"

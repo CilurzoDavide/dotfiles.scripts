@@ -1,0 +1,4 @@
+#!/bin/sh
+file_path=/home/tobecci/Pictures/Screenshots/scrot-$(date +%c).jpeg
+
+/usr/bin/scrot --file "$file_path" --format jpeg --quality 30 --silent --freeze
