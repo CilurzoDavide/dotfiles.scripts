@@ -50,4 +50,6 @@ send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code
 
 breathe_a_bit
 
+/home/tobecci/dev/playground/nodejs/index.mjs &
+
 /usr/bin/notify-send "LOGIN SCRIPT STATUS" "done" -t 1000  --replace-id $notif_id

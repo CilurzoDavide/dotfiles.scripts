@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Target device MAC address
+THRESHOLD=-80  # Set your RSSI threshold
+
+while true; do
+	echo "scanning for devices"
+    # Scan for Bluetooth devices and filter by RSSI value
+    RSSI=$(bluetoothctl scan le | grep -oP '(?<=RSSI: )-?\d+')
+
+    echo "val: $RSSI"
+
+    # If the RSSI value is below threshold, send a notification
+    if [[ $RSSI -lt $THRESHOLD ]]; then
+      #   notify-send "Bluetooth Alert" "Device $TARGET_DEVICE has weak signal ($RSSI dBm)"
+        notify-send "Bluetooth Alert" "Device close"
+    fi
+
+    # Sleep for a few seconds before scanning again
+    sleep 2
+done
