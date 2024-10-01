@@ -1,4 +1,4 @@
 #!/bin/sh
 file_path=/home/tobecci/Pictures/Screenshots/scrot-$(date +%c).jpeg
-
-/usr/bin/scrot --file "$file_path" --format jpeg --quality 100 --silent --freeze
+/usr/bin/scrot --file "$file_path" --format jpeg --quality 100 --silent --freeze\
+notify-send "scrot fullscreen to file" "screenshot in file ${file_path}"

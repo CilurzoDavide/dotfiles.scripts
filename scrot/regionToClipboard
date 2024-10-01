@@ -1,10 +1,8 @@
 #!/bin/sh
 file_path=/home/tobecci/Pictures/Screenshots/scrot-$(date +%c).jpeg
-
-
 /usr/bin/scrot --file "$file_path" --format jpeg --quality 10 --silent --freeze --select --line color="red",style=dash,width=5,opacity=100
-
+sleep 1
 /usr/bin/xclip -selection clipboard -t image/jpeg -i "$file_path"
-
-
+sleep 1
 rm "$file_path"
+notify-send "scrot region to clipboard" "screenshot in clipboard"

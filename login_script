@@ -28,28 +28,29 @@ breathe_a_bit(){
 # reload touchpad in background
 send_notification "reloading touchpad" && /home/tobecci/.scripts/reloadTouchpad &
 
-breathe_a_bit
+# breathe_a_bit
 
 # set brightness to default
-send_notification "setting brightness" &&  /home/tobecci/dev/scripts/linuxUtils/src/screen/brightness/lowest.brightness.mjs &
+# send_notification "setting brightness" &&  /home/tobecci/dev/scripts/linuxUtils/src/screen/brightness/lowest.brightness.mjs &
 
-breathe_a_bit
+# breathe_a_bit
 
 # # pwm workers
-send_notification "starting pwm loop" && /home/tobecci/dev/scripts/xfceWindowHide/workers/startOperationalLoop.js > /dev/null 2>&1 &
+# send_notification "starting pwm loop" && /home/tobecci/dev/scripts/xfceWindowHide/workers/startOperationalLoop.js > /dev/null 2>&1 &
 
-breathe_a_bit
+# breathe_a_bit
 
 # # bitwarden
 # send_notification "starting bitwarden" && switch_to_last_desktop && /usr/bin/bitwarden-desktop > /dev/null 2>&1 &
 
-breathe_a_bit
+# breathe_a_bit
 
 # # todolist
-send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/tobecci.todo > /dev/null 2>&1 &
+# send_notification "opening todo list" && switch_to_last_desktop && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/tobecci.todo > /dev/null 2>&1 &
+# send_notification "opening todo list" && /usr/bin/code --disable-gpu --new-window /home/tobecci/dev/tobecci.todo > /dev/null 2>&1 &
 
-breathe_a_bit
+# breathe_a_bit
 
-/home/tobecci/dev/playground/nodejs/index.mjs &
+# /home/tobecci/dev/playground/nodejs/index.mjs &
 
 /usr/bin/notify-send "LOGIN SCRIPT STATUS" "done" -t 1000  --replace-id $notif_id

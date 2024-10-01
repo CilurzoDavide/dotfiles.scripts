@@ -1,0 +1,4 @@
+#!/bin/bash
+password=$(cat /home/tobecci/.scripts/password.txt)
+echo $password | sudo --stdin systemctl restart waydroid-container.service
+waydroid show-full-ui

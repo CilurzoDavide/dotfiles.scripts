@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pkexec bash -c "systemctl restart lightdm"
