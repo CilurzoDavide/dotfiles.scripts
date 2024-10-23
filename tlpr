@@ -1,0 +1,6 @@
+#!/bin/bash
+password=$(cat /home/tobecci/.scripts/password.txt)
+
+echo $password | sudo --stdin systemctl enable tlp.service
+echo $password | sudo --stdin systemctl restart tlp.service
+echo $password | sudo --stdin tlp-stat -p

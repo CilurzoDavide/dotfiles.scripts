@@ -1,6 +1,8 @@
 #!/bin/bash
 
-redshift -O 1000 > /dev/null 2>&1
+# redshift -O 1000 > /dev/null 2>&1
+
+notify-send "Touchpad Reload" "reloading touchpad......."
 
 libinput-gestures-setup stop > /dev/null 2>&1
 
@@ -20,4 +22,6 @@ libinput-gestures-setup restart desktop > /dev/null 2>&1
 # disable middle click touchpad
 xinput set-button-map 10 1 0 3 4 5 6 7
 
-redshift -x  > /dev/null 2>&1
+notify-send "Touchpad Reload" "done"
+
+# redshift -x  > /dev/null 2>&1
